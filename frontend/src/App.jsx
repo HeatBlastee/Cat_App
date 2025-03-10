@@ -1,15 +1,18 @@
-
 import './App.css'
-import { Button } from './components/ui/button'
+import CatAbout from './components/CatAbout';
+import HomeScreen from './components/HomeScreen'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   
 
   return (
-    <>
-     <h1>App</h1>
-     <Button>Click Me!</Button>
-    </>
+    <Router>
+            <Routes>
+                <Route path="/" element={<HomeScreen />} />
+                <Route path="/cat/:id" element={<CatAbout/>} />  {/* Route for CatAbout */}
+            </Routes>
+        </Router>
   )
 }
 
